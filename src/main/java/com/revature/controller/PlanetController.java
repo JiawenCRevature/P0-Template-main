@@ -23,7 +23,7 @@ public class PlanetController {
 			ctx.json(pService.getAllPlanets()).status(200);
 
 		} catch (SQLException e) {
-			// TODO: handle exception
+		
 			logger.error(e.getMessage());
 		}
 		
@@ -38,7 +38,7 @@ public class PlanetController {
 			
 			ctx.json(p).status(200);
 		} catch (SQLException e) {
-			// TODO: handle exception
+		
 			logger.error(e.getMessage());
 		}
 		
@@ -53,7 +53,7 @@ public class PlanetController {
 			
 			ctx.json(p).status(200);
 		} catch (SQLException e) {
-			// TODO: handle exception
+		
 			logger.error(e.getMessage());
 		}
 		
@@ -69,7 +69,7 @@ public class PlanetController {
 		
 		ctx.json(createdPlanet).status(201);
 		} catch (SQLException e) {
-			// TODO: handle exception
+		
 			logger.error(e.getMessage());
 		}
 		
@@ -82,7 +82,7 @@ public class PlanetController {
 		pService.deletePlanetById(planetId);
 		ctx.json("Planet successfully deleted").status(202);
 		} catch (SQLException e) {
-			// TODO: handle exception
+			
 			logger.error(e.getMessage());
 		}
 		

@@ -17,13 +17,14 @@ public class PlanetDao {
     public static Logger logger = LoggerFactory.getLogger(PlanetDao.class);
 
     public List<Planet> getAllPlanets() throws SQLException {
-		// TODO Auto-generated method stub
+	
 		try(Connection connection = ConnectionUtil.createConnection()){
 			String sql = "select * from planets";
 			Statement statement = connection.createStatement();
 			ResultSet rs = statement.executeQuery(sql);
 			List<Planet> planets = new ArrayList<>();
-			while(rs.next()){ //the resultset next method returns a boolean, so we use it in our loop
+			while(rs.next()){ 
+				//the resultset next method returns a boolean, so we use it in our loop
 				Planet planet = new Planet();
 				planet.setId(rs.getInt(1));
 				planet.setName(rs.getString(2));
@@ -35,7 +36,7 @@ public class PlanetDao {
 	}
 
 	public Planet getPlanetByName(String owner, String planetName) throws SQLException {
-		// TODO Auto-generated method stub
+
 		try(Connection connection = ConnectionUtil.createConnection()) {
 			//UserDao user = new UserDao();
 			String sql = "select * from planets where name = ?";
@@ -54,7 +55,7 @@ public class PlanetDao {
 	}
 
 	public Planet getPlanetById(String username, int planetId) throws SQLException{
-		// TODO Auto-generated method stub
+	
 		try(Connection connection = ConnectionUtil.createConnection()) {
 			// UserDao user = new UserDao();
 			String sql = "select * from planets where id = ?";
@@ -91,7 +92,7 @@ public class PlanetDao {
 	}
 
 	public void deletePlanetById(int planetId) throws SQLException{
-		// TODO Auto-generated method stub
+	
 		try(Connection connection = ConnectionUtil.createConnection()) {
 			String sql = "delete from planets where id = ?";
 			PreparedStatement ps = connection.prepareStatement(sql);
@@ -114,7 +115,7 @@ public class PlanetDao {
 	// 		// System.out.println(planetDao.getPlanetById("username", 12));
 	// 		System.out.println(planetDao.createPlanet("username", planet).getId());
 	// 	}catch (SQLException e) {
-	// 		// TODO: handle exception
+	// 		
 	// 		logger.error(e.getMessage());
 			
 	// 	}

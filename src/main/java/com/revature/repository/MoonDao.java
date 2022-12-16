@@ -14,7 +14,7 @@ import com.revature.utilities.ConnectionUtil;
 public class MoonDao {
     
     public List<Moon> getAllMoons() throws SQLException {
-		// TODO Auto-generated method stub
+	
 		try(Connection connection = ConnectionUtil.createConnection()){
 			String sql = "select * from moons";
 			Statement statement = connection.createStatement();
@@ -33,7 +33,7 @@ public class MoonDao {
 	}
 
 	public Moon getMoonByName(String username, String moonName) throws SQLException {
-		// TODO Auto-generated method stub
+	
 		try(Connection connection = ConnectionUtil.createConnection()){
 			String sql = "select * from moons where name = ?";
 			PreparedStatement ps = connection.prepareStatement(sql);
@@ -49,7 +49,7 @@ public class MoonDao {
 	}
 
 	public Moon getMoonById(String username, int moonId) throws SQLException {
-		// TODO Auto-generated method stub
+
 		try(Connection connection = ConnectionUtil.createConnection()){
 			String sql = "select * from moons where id = ?";
 			PreparedStatement ps = connection.prepareStatement(sql);
@@ -66,7 +66,7 @@ public class MoonDao {
 	}
 
 	public Moon createMoon(String username, Moon m) throws SQLException {
-		// TODO Auto-generated method stub
+
 		try(Connection connection = ConnectionUtil.createConnection()){
 			String sql = "insert into moons values(default,?,?)";
 			PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
@@ -86,7 +86,7 @@ public class MoonDao {
 	}
 
 	public void deleteMoonById(int moonId) throws SQLException {
-		// TODO Auto-generated method stub
+		
 		try(Connection connection = ConnectionUtil.createConnection()){
 			String sql = "delete from moons where id = ?";
 			PreparedStatement ps = connection.prepareStatement(sql);
@@ -97,7 +97,7 @@ public class MoonDao {
 	}
 
 	public List<Moon> getMoonsFromPlanet(int planetId) throws SQLException {
-		// TODO Auto-generated method stub
+	
 		try(Connection connection = ConnectionUtil.createConnection()){
 			String sql = "select * from moons where myplanetid = ?";
 			PreparedStatement ps = connection.prepareStatement(sql);

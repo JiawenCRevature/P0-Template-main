@@ -35,7 +35,7 @@ public class MoonController {
 		
 		ctx.json(m).status(200);
 		} catch (SQLException e) {
-			// TODO: handle exception
+		
 			logger.error(e.getMessage());
 		}
 		
@@ -50,7 +50,7 @@ public class MoonController {
 		
 		ctx.json(m).status(200);
 		} catch (SQLException e) {
-			// TODO: handle exception
+		
 			logger.error(e.getMessage());
 		}
 		
@@ -78,7 +78,7 @@ public class MoonController {
 		
 		ctx.json("Moon successfully deleted").status(202);
 		} catch (SQLException e) {
-			// TODO: handle exception
+		
 			logger.error(e.getMessage());
 		}
 		
@@ -93,7 +93,7 @@ public class MoonController {
 		
 		ctx.json(moonList).status(200);
 		} catch (SQLException e) {
-			// TODO: handle exception
+			
 			logger.error(e.getMessage());
 		}
 		
