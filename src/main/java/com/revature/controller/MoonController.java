@@ -57,13 +57,13 @@ public class MoonController {
 	}
 
 	public void createMoon(Context ctx) {
-		
-		try{Moon m = ctx.bodyAsClass(Moon.class);
-		User u = ctx.sessionAttribute("user");
-		
-		Moon outGoingMoon = mService.createMoon(u.getUsername(),m);
-		
-		ctx.json(outGoingMoon).status(201);
+		try{
+			Moon m = ctx.bodyAsClass(Moon.class);
+			User u = ctx.sessionAttribute("user");
+			
+			Moon outGoingMoon = mService.createMoon(u.getUsername(),m);
+			
+			ctx.json(outGoingMoon).status(201);
 		} catch (SQLException e){
 			logger.error(e.getMessage());
 		}
